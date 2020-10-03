@@ -18,6 +18,22 @@ var choices;
 var toUpper = function (x) {
     return x.toUpperCase();
 };
+// creates a variable for uppercase conversion
+alpha2 = alpha.map(toUpper);
 
+var get = document.querySelector("#generate");
 
+get.addEventListener("click", function () {
+    ps = generatePassword();
+    document.getElementById("password").placeholder = ps;
+});
 
+// Start function to generate password
+function generatePassword() {
+    enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
+    if (!enter) {
+        alert("This needs a value");
+    } else if (enter < 8 || enter > 128) {
+        enter = parseInt(prompt("You must choose between 8 and 128"));
+
+ 
