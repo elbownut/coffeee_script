@@ -97,3 +97,30 @@ function generatePassword() {
     else if (confirmLowercase) {
         choices = alpha;
     }
+    // Created space variable to fill uppercase conversion
+    else if (confirmUppercase) {
+        choices = large.concat(alpha2);
+    };
+
+    // password variable
+    var password = [];
+
+    // Start random selection variables:
+    // Random selection for all variables: 
+    for (var i = 0; i < enter; i++) {
+        var pickChoices = choices[Math.floor(Math.random() * choices.length)];
+        password.push(pickChoices);
+    }
+    // This joins the password array and converts it to a string
+    var ps = password.join("");
+    UserInput(ps);
+    return ps;
+}
+// Adds password to the textbox and changs function input to use textcontent
+function UserInput(ps) {
+    document.getElementById("password").textContent = ps;
+
+}
+
+
+
